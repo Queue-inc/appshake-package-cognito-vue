@@ -1,1 +1,2 @@
-# appshake-package-cognto-vue
+# appshake-template-vue
+appshake template vue

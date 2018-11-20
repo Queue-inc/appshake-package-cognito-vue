@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "aws-amplify": "latest"
+  },
+  "prompts": [
+    {
+      "type": "Question",
+      "text": "What is Cognito region",
+      "key": "region"
+    },
+    {
+      "type": "Question",
+      "text": "What is Cognito user pool id?",
+      "key": "userpoolId"
+    },
+    {
+      "type": "Question",
+      "text": "What is Cognito id pool id?",
+      "key": "idpoolId"
+    },
+    {
+      "type": "Question",
+      "text": "What is Cognito web client id?",
+      "key": "clientId"
+    },
+    {
+      "type": "Action",
+      "command": "appshake set VUE_APP_COGNITO_REGION $region && appshake set VUE_APP_COGNITO_USERPOOL_ID $userpoolId && appshake set VUE_APP_COGNITO_IDPOOL_ID $idpoolId && appshake set VUE_APP_COGNITO_CLIENT_ID clientId"
+    }
+  ]
+}
