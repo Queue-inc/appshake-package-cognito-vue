@@ -101,6 +101,8 @@ export default {
       Amplify.Auth.signIn(this.signInEmail, this.signInPassword)
         .then(data => {
           this.connecting = false
+          // fire event
+          this.$emit('signIn', data)
         })
         .catch(err => {
           this.connecting = false
@@ -124,8 +126,9 @@ export default {
       })
         .then(data => {
           this.connecting = false
-          alert('Your account successfully registered. Please check you inbox.')
           this.signUpEmail = this.signUpPassword = this.signUpPasswordConfirm = ''
+          alert('Your account successfully registered. Please check you inbox.')
+          this.$emit('signUp', data)
         })
         .catch(err => {
           this.connecting = false
@@ -143,6 +146,7 @@ export default {
           this.connecting = false
           alert('Password reset link sent. Please check you inbox.')
           this.passwordEmail = ''
+          this.$emit('sendLink', data)
         })
         .catch(err => {
           this.connecting = false
